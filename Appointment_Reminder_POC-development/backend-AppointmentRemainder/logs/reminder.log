@@ -1,0 +1,4311 @@
+2021-12-17 15:55:36.341  INFO 7716 --- [main] c.c.A.AppointmentRemainderApplication    : Starting AppointmentRemainderApplication using Java 14.0.2 on DESKTOP-649BSER with PID 7716 (D:\Github\AppointmentRemainder\target\classes started by Lenovo in D:\Github\AppointmentRemainder)
+2021-12-17 15:55:36.350  INFO 7716 --- [main] c.c.A.AppointmentRemainderApplication    : No active profile set, falling back to default profiles: default
+2021-12-17 15:55:37.191  INFO 7716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-17 15:55:37.216  INFO 7716 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2021-12-17 15:55:38.324  INFO 7716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-17 15:55:38.347  INFO 7716 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-17 15:55:38.347  INFO 7716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-17 15:55:38.634  INFO 7716 --- [main] o.a.c.c.C.[.[localhost].[/reminder]      : Initializing Spring embedded WebApplicationContext
+2021-12-17 15:55:38.634  INFO 7716 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2210 ms
+2021-12-17 15:55:38.947  INFO 7716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-17 15:55:39.456  INFO 7716 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-17 15:55:39.577  INFO 7716 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: first]
+2021-12-17 15:55:39.696  INFO 7716 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-17 15:55:39.952  INFO 7716 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-17 15:55:40.258  INFO 7716 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-12-17 15:55:41.172  INFO 7716 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-17 15:55:41.298  INFO 7716 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'first'
+2021-12-17 15:55:41.484  INFO 7716 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-12-17 15:55:41.534  INFO 7716 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-17 15:55:41.593  WARN 7716 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-17 15:55:42.237  INFO 7716 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/reminder'
+2021-12-17 15:55:42.259  INFO 7716 --- [main] c.c.A.AppointmentRemainderApplication    : Started AppointmentRemainderApplication in 6.584 seconds (JVM running for 8.034)
+2021-12-17 15:56:00.174 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 15:56:00.244 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 15:56:00.259  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 15:56:21.327 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 15:56:21.331 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 15:56:21.339 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 15:56:21.347 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 15:58:00.017 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 15:58:00.029 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 15:58:00.037  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 15:58:21.071 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 15:58:21.079 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 15:58:21.088 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 15:58:21.100 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 15:59:37.588  INFO 7716 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/reminder]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-17 15:59:37.589  INFO 7716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-17 15:59:37.591  INFO 7716 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-17 15:59:37.678 DEBUG 7716 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 15:59:37.685 DEBUG 7716 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 15:59:37.724 DEBUG 7716 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.upload_history_det
+        (campaign_id, campaign_name, file_name) 
+    values
+        (?, ?, ?)
+2021-12-17 15:59:37.730 TRACE 7716 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_03]
+2021-12-17 15:59:37.738 TRACE 7716 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Test]
+2021-12-17 15:59:37.739 TRACE 7716 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Campaign_1.csv]
+2021-12-17 15:59:37.756 DEBUG 7716 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        uploadhist_.uploaded_on as uploaded5_0_ 
+    from
+        appointment_remainder.upload_history_det uploadhist_ 
+    where
+        uploadhist_.upload_history_id=?
+2021-12-17 15:59:37.758 TRACE 7716 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [692]
+2021-12-17 15:59:37.794  INFO 7716 --- [http-nio-8080-exec-2] c.c.A.service.impl.CampaignServiceImpl   : ****Converted CSV DATA to Object****
+2021-12-17 16:00:00.012 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:00:00.032 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:00:00.045  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:00:21.073 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:00:21.082 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:00:21.091 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:00:21.100 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:02:00.008 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:02:00.026 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:02:00.037  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:02:21.071 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:02:21.079 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:02:21.087 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:02:21.095 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:04:00.015 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:04:00.023 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:04:00.027  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:04:21.082 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:04:21.086 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:04:21.092 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:04:21.097 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:06:00.010 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:06:00.026 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:06:00.031  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:06:21.058 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:06:21.067 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:06:21.080 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:06:21.088 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:08:00.008 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:08:00.025 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:08:00.031 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:08:00.041 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:08:00.044 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:08:00.047  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:08:21.099 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:10:00.021 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:10:00.033 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:10:00.039  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:10:21.071 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:10:21.079 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:10:21.087 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:10:21.095 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:12:00.018 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:12:00.033 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:12:00.040 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:12:00.053 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:12:00.058 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:12:00.061  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:12:21.096 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:14:00.007 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:14:00.017 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:14:00.024 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:14:00.034 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:14:00.038 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:14:00.040  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:14:21.090 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:16:00.013 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:16:00.022 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:16:00.029 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:16:00.039 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:16:00.042 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:16:00.045  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:16:21.087 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:18:00.005 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:18:00.020 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:18:00.027  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:18:21.071 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:18:21.078 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:18:21.090 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:18:21.100 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:20:00.009 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:20:00.030 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:20:00.041  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:20:21.098 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:20:21.101 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:20:21.103 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:20:21.106 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:22:00.010 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:22:00.027 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:22:00.033 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:22:00.042 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:22:00.045 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:22:00.048  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:22:21.072 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:24:00.005 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:24:00.017 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:24:00.025  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:24:21.033 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:24:21.040 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:24:21.048 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:24:21.055 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:26:00.006 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:26:00.021 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:26:00.027  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:26:21.036 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:26:21.044 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:26:21.051 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:26:21.058 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:28:00.007 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:28:00.024 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:28:00.032 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:28:00.041 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:28:00.044 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:28:00.047  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:28:21.057 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:30:00.008 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:30:00.027 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:30:00.032 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:30:00.040 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:30:00.043 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:30:00.046  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:30:21.054 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:32:00.008 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:32:00.028 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:32:00.034 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:32:00.042 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:32:00.045 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:32:00.048  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:32:21.056 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:34:00.009 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:34:00.026 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:34:00.031  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:34:21.076 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:34:21.090 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:34:21.096 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:34:21.102 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:36:00.015 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:36:00.024 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:36:00.030 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:36:00.040 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:36:00.043 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:36:00.045  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:36:21.080 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:38:00.009 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:38:00.023 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:38:00.029  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:38:21.070 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:38:21.078 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:38:21.092 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:38:21.102 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:40:00.007 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:40:00.026 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:40:00.031  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:40:21.067 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:40:21.074 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:40:21.087 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:40:21.093 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:42:00.019 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:42:00.033 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:42:00.039 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:42:00.048 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:42:00.052 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:42:00.055  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:42:21.090 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:43:49.999 DEBUG 7716 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:43:50.005 DEBUG 7716 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:43:50.010 DEBUG 7716 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.upload_history_det
+        (campaign_id, campaign_name, file_name) 
+    values
+        (?, ?, ?)
+2021-12-17 16:43:50.011 TRACE 7716 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_03]
+2021-12-17 16:43:50.012 TRACE 7716 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Test]
+2021-12-17 16:43:50.013 TRACE 7716 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Campaign_1.csv]
+2021-12-17 16:43:50.020 DEBUG 7716 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        uploadhist_.uploaded_on as uploaded5_0_ 
+    from
+        appointment_remainder.upload_history_det uploadhist_ 
+    where
+        uploadhist_.upload_history_id=?
+2021-12-17 16:43:50.059 TRACE 7716 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [693]
+2021-12-17 16:43:50.065  INFO 7716 --- [http-nio-8080-exec-5] c.c.A.service.impl.CampaignServiceImpl   : ****Converted CSV DATA to Object****
+2021-12-17 16:44:00.013 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:44:00.018 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:44:00.021  INFO 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:44:14.502 DEBUG 7716 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:44:14.506 DEBUG 7716 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:44:14.509 DEBUG 7716 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.upload_history_det
+        (campaign_id, campaign_name, file_name) 
+    values
+        (?, ?, ?)
+2021-12-17 16:44:14.510 TRACE 7716 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_03]
+2021-12-17 16:44:14.510 TRACE 7716 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Test]
+2021-12-17 16:44:14.510 TRACE 7716 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Campaign_1.csv]
+2021-12-17 16:44:14.511 DEBUG 7716 --- [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        uploadhist_.uploaded_on as uploaded5_0_ 
+    from
+        appointment_remainder.upload_history_det uploadhist_ 
+    where
+        uploadhist_.upload_history_id=?
+2021-12-17 16:44:14.512 TRACE 7716 --- [http-nio-8080-exec-6] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [694]
+2021-12-17 16:44:14.520  INFO 7716 --- [http-nio-8080-exec-6] c.c.A.service.impl.CampaignServiceImpl   : ****Converted CSV DATA to Object****
+2021-12-17 16:44:21.075 ERROR 7716 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:44:21.081 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:44:21.088 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:44:21.095 DEBUG 7716 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:44:29.322  INFO 7716 --- [RMI TCP Connection(52)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-12-17 16:44:29.380  INFO 7716 --- [RMI TCP Connection(52)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'first'
+2021-12-17 16:44:29.381  INFO 7716 --- [RMI TCP Connection(52)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-12-17 16:44:29.385  INFO 7716 --- [RMI TCP Connection(52)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-12-17 16:44:41.128  INFO 5676 --- [main] c.c.A.AppointmentRemainderApplication    : Starting AppointmentRemainderApplication using Java 14.0.2 on DESKTOP-649BSER with PID 5676 (D:\Github\AppointmentRemainder\target\classes started by Lenovo in D:\Github\AppointmentRemainder)
+2021-12-17 16:44:41.139  INFO 5676 --- [main] c.c.A.AppointmentRemainderApplication    : No active profile set, falling back to default profiles: default
+2021-12-17 16:44:41.998  INFO 5676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-17 16:44:42.024  INFO 5676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2021-12-17 16:44:43.022  INFO 5676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-17 16:44:43.036  INFO 5676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-17 16:44:43.037  INFO 5676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-17 16:44:43.226  INFO 5676 --- [main] o.a.c.c.C.[.[localhost].[/reminder]      : Initializing Spring embedded WebApplicationContext
+2021-12-17 16:44:43.227  INFO 5676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1997 ms
+2021-12-17 16:44:43.384  INFO 5676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-17 16:44:43.898  INFO 5676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-17 16:44:44.033  INFO 5676 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: first]
+2021-12-17 16:44:44.125  INFO 5676 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-17 16:44:44.357  INFO 5676 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-17 16:44:44.639  INFO 5676 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-12-17 16:44:45.584  INFO 5676 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-17 16:44:45.786  INFO 5676 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'first'
+2021-12-17 16:44:46.017  INFO 5676 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-12-17 16:44:46.089  INFO 5676 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-17 16:44:46.176  WARN 5676 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-17 16:44:46.774  INFO 5676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/reminder'
+2021-12-17 16:44:46.799  INFO 5676 --- [main] c.c.A.AppointmentRemainderApplication    : Started AppointmentRemainderApplication in 6.371 seconds (JVM running for 8.522)
+2021-12-17 16:45:01.432  INFO 5676 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/reminder]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-17 16:45:01.434  INFO 5676 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-17 16:45:01.436  INFO 5676 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-12-17 16:45:01.702 DEBUG 5676 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:45:01.762 DEBUG 5676 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:45:01.807 DEBUG 5676 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.upload_history_det
+        (campaign_id, campaign_name, file_name) 
+    values
+        (?, ?, ?)
+2021-12-17 16:45:01.812 TRACE 5676 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_03]
+2021-12-17 16:45:01.818 TRACE 5676 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Test]
+2021-12-17 16:45:01.819 TRACE 5676 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Campaign_1.csv]
+2021-12-17 16:45:01.830 DEBUG 5676 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        uploadhist_.uploaded_on as uploaded5_0_ 
+    from
+        appointment_remainder.upload_history_det uploadhist_ 
+    where
+        uploadhist_.upload_history_id=?
+2021-12-17 16:45:01.832 TRACE 5676 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [695]
+2021-12-17 16:45:01.868  INFO 5676 --- [http-nio-8080-exec-2] c.c.A.service.impl.CampaignServiceImpl   : ****Converted CSV DATA to Object****
+2021-12-17 16:46:00.019 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:46:00.032 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:46:00.044 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:46:00.068 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:46:00.072 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:46:00.079  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:46:21.147 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:48:00.010 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:48:00.020 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:48:00.025  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:48:21.066 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:48:21.074 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:48:21.083 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:48:21.089 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:48:37.972 DEBUG 5676 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:48:37.978 DEBUG 5676 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:48:37.984 DEBUG 5676 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.upload_history_det
+        (campaign_id, campaign_name, file_name) 
+    values
+        (?, ?, ?)
+2021-12-17 16:48:37.985 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_01]
+2021-12-17 16:48:37.985 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Test]
+2021-12-17 16:48:37.985 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Campaign_1.csv]
+2021-12-17 16:48:37.989 DEBUG 5676 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        uploadhist_.uploaded_on as uploaded5_0_ 
+    from
+        appointment_remainder.upload_history_det uploadhist_ 
+    where
+        uploadhist_.upload_history_id=?
+2021-12-17 16:48:37.990 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [696]
+2021-12-17 16:48:37.997  INFO 5676 --- [http-nio-8080-exec-5] c.c.A.service.impl.CampaignServiceImpl   : ****Converted CSV DATA to Object****
+2021-12-17 16:48:37.998  INFO 5676 --- [http-nio-8080-exec-5] c.c.A.service.impl.CampaignServiceImpl   : ****Inserting contact details to DB Table****
+2021-12-17 16:48:38.012 DEBUG 5676 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.contact_det
+        (campaign_id,campaign_name,doctor_name,patient_name,contact_number,appointment_date,language,call_status,upload_history_id) 
+    values
+        (?,?,?,?,?,?,?,?,?)
+2021-12-17 16:48:38.013 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_01]
+2021-12-17 16:48:38.014 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Orthopediology]
+2021-12-17 16:48:38.014 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Sharma]
+2021-12-17 16:48:38.014 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Samira]
+2021-12-17 16:48:38.014 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [0504455381]
+2021-12-17 16:48:38.015 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [2021-11-17 18:45:00]
+2021-12-17 16:48:38.015 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [en-US]
+2021-12-17 16:48:38.015 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [New]
+2021-12-17 16:48:38.015 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [NUMERIC] - [696]
+2021-12-17 16:48:38.025 DEBUG 5676 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.contact_det
+        (campaign_id,campaign_name,doctor_name,patient_name,contact_number,appointment_date,language,call_status,upload_history_id) 
+    values
+        (?,?,?,?,?,?,?,?,?)
+2021-12-17 16:48:38.026 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_01]
+2021-12-17 16:48:38.026 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Orthopediology]
+2021-12-17 16:48:38.026 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Sharma]
+2021-12-17 16:48:38.026 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Ibrahim]
+2021-12-17 16:48:38.027 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [0502777611]
+2021-12-17 16:48:38.027 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [2021-11-17 18:30:00]
+2021-12-17 16:48:38.027 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [ar-XA]
+2021-12-17 16:48:38.027 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [New]
+2021-12-17 16:48:38.028 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [NUMERIC] - [696]
+2021-12-17 16:48:38.032 DEBUG 5676 --- [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.contact_det
+        (campaign_id,campaign_name,doctor_name,patient_name,contact_number,appointment_date,language,call_status,upload_history_id) 
+    values
+        (?,?,?,?,?,?,?,?,?)
+2021-12-17 16:48:38.034 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_01]
+2021-12-17 16:48:38.035 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Orthopediology]
+2021-12-17 16:48:38.035 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Sharma]
+2021-12-17 16:48:38.035 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [Ahmad]
+2021-12-17 16:48:38.036 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [0502369592]
+2021-12-17 16:48:38.036 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [2021-11-17 18:15:00]
+2021-12-17 16:48:38.036 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [ar-XA]
+2021-12-17 16:48:38.036 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [New]
+2021-12-17 16:48:38.037 TRACE 5676 --- [http-nio-8080-exec-5] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [NUMERIC] - [696]
+2021-12-17 16:50:00.004 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:50:00.013 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:50:00.021 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:50:00.035 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:50:00.041 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:50:00.049  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:50:21.096 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:52:00.016 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:52:00.030 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:52:00.039  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:52:21.075 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:52:21.079 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:52:21.087 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:52:21.093 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:54:00.018 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:54:00.037 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:54:00.044 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:54:00.054 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:54:00.057 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:54:00.061  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:54:21.102 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:56:00.017 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:56:00.034 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:56:00.042  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:56:21.071 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 16:56:21.075 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:56:21.078 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:56:21.082 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:58:00.007 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:58:00.014 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:58:00.020 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 16:58:00.028 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 16:58:00.032 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 16:58:00.035  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 16:58:21.060 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:00:00.005 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:00:00.015 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:00:00.021 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:00:00.029 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:00:00.033 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:00:00.038  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:00:21.089 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:02:00.013 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:02:00.020 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:02:00.026 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:02:00.036 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:02:00.040 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:02:00.042  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:02:21.081 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:04:00.022 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:04:00.031 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:04:00.036  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:04:21.078 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:04:21.086 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:04:21.097 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:04:21.105 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:06:00.031 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:06:00.039 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:06:00.045 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:06:00.055 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:06:00.059 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:06:00.061  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:06:21.103 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:08:00.009 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:08:00.025 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:08:00.031 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:08:00.041 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:08:00.044 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:08:00.047  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:08:21.104 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:10:00.017 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:10:00.031 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:10:00.043 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:10:00.061 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:10:00.068 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:10:00.073  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:10:21.119 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:12:00.005 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:12:00.021 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:12:00.032  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:12:21.039 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:12:21.048 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:12:21.057 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:12:21.065 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:14:00.005 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:14:00.015 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:14:00.020  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:14:21.028 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:14:21.041 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:14:21.061 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:14:21.078 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:16:00.006 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:16:00.016 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:16:00.021  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:16:21.027 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:16:21.037 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:16:21.051 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:16:21.058 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:18:00.005 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:18:00.013 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:18:00.018  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:18:21.027 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:18:21.034 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:18:21.044 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:18:21.052 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:20:00.012 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:20:00.023 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:20:00.029 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:20:00.038 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:20:00.042 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:20:00.044  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:20:21.050 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:22:00.004 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:22:00.015 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:22:00.021  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:22:21.035 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:22:21.041 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:22:21.048 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:22:21.061 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:24:00.006 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:24:00.013 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:24:00.019  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:24:21.028 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 17:24:21.039 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:24:21.053 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:24:21.066 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:26:00.008 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:26:00.026 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:26:00.037 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 17:26:00.056 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 17:26:00.063 DEBUG 5676 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 17:26:00.067  INFO 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 17:26:21.074 ERROR 5676 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 18:15:00.433  INFO 12460 --- [main] c.c.A.AppointmentRemainderApplication    : Starting AppointmentRemainderApplication using Java 14.0.2 on DESKTOP-649BSER with PID 12460 (D:\Github\AppointmentRemainder\target\classes started by Lenovo in D:\Github\AppointmentRemainder)
+2021-12-17 18:15:00.439  INFO 12460 --- [main] c.c.A.AppointmentRemainderApplication    : No active profile set, falling back to default profiles: default
+2021-12-17 18:15:00.928  INFO 12460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-17 18:15:00.950  INFO 12460 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2021-12-17 18:15:01.617  INFO 12460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-12-17 18:15:01.626  INFO 12460 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-17 18:15:01.626  INFO 12460 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-17 18:15:01.744  INFO 12460 --- [main] o.a.c.c.C.[.[localhost].[/reminder]      : Initializing Spring embedded WebApplicationContext
+2021-12-17 18:15:01.745  INFO 12460 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1262 ms
+2021-12-17 18:15:01.865  INFO 12460 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-17 18:15:02.169  INFO 12460 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-17 18:15:02.238  INFO 12460 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: first]
+2021-12-17 18:15:02.283  INFO 12460 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-17 18:15:02.406  INFO 12460 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-17 18:15:02.555  INFO 12460 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-12-17 18:15:03.112  INFO 12460 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-17 18:15:03.187  INFO 12460 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'first'
+2021-12-17 18:15:03.386  INFO 12460 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2021-12-17 18:15:03.426  INFO 12460 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-17 18:15:03.461  WARN 12460 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-17 18:15:03.886  INFO 12460 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/reminder'
+2021-12-17 18:15:03.912  INFO 12460 --- [main] c.c.A.AppointmentRemainderApplication    : Started AppointmentRemainderApplication in 3.818 seconds (JVM running for 4.824)
+2021-12-17 18:15:26.367  INFO 12460 --- [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/reminder]      : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-17 18:15:26.368  INFO 12460 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-17 18:15:26.370  INFO 12460 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-12-17 18:15:26.599 DEBUG 12460 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 18:15:26.660 DEBUG 12460 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 18:15:26.744 DEBUG 12460 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        appointment_remainder.upload_history_det
+        (campaign_id, campaign_name, file_name) 
+    values
+        (?, ?, ?)
+2021-12-17 18:15:26.754 TRACE 12460 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [C_01]
+2021-12-17 18:15:26.767 TRACE 12460 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Test]
+2021-12-17 18:15:26.769 TRACE 12460 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Campaign_3.csv]
+2021-12-17 18:15:26.790 DEBUG 12460 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        uploadhist_.uploaded_on as uploaded5_0_ 
+    from
+        appointment_remainder.upload_history_det uploadhist_ 
+    where
+        uploadhist_.upload_history_id=?
+2021-12-17 18:15:26.792 TRACE 12460 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [NUMERIC] - [697]
+2021-12-17 18:15:41.541 ERROR 12460 --- [http-nio-8080-exec-2] c.c.A.service.impl.CampaignServiceImpl   : fail to parse CSV file: C:\Reminder\Failure_20211217061538.csv
+2021-12-17 18:16:00.028 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 18:16:00.048 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 18:16:00.058  INFO 12460 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 18:16:13.620  INFO 12460 --- [http-nio-8080-exec-2] c.c.A.service.impl.CampaignServiceImpl   : ****Converted CSV DATA to Object****
+2021-12-17 18:16:21.116 ERROR 12460 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 18:16:21.129 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 18:16:21.141 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 18:16:21.158 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
+2021-12-17 18:18:00.018 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 18:18:00.033 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 18:18:00.042  INFO 12460 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : ****Getting SFTP session****
+2021-12-17 18:18:21.079 ERROR 12460 --- [scheduling-1] c.c.A.service.impl.CampaignServiceImpl   : JSchException occurred file upload from SFTP server due to java.net.ConnectException: Connection timed out: connect
+2021-12-17 18:18:21.085 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_id,
+        name,
+        description,
+        status,
+        max_adv_time,
+        retry_delay,
+        retry_count,
+        concurrent_call,
+        start_date,
+        start_time,
+        campaign_det.end_date,
+        end_time,
+        ftp_location,
+        ftp_credentials,
+        file_name,
+        call_before 
+    FROM
+        appointment_remainder.campaign_det
+2021-12-17 18:18:21.091 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    SELECT
+        campaign_week_id,
+        campaign_id,
+        day,
+        status,
+        start_time,
+        end_time 
+    from
+        appointment_remainder.campaign_week_det
+2021-12-17 18:18:21.100 DEBUG 12460 --- [scheduling-1] org.hibernate.SQL                        : 
+    select
+        campaign_id,
+        campaign_name,
+        doctor_name,
+        patient_name,
+        contact_number,
+        appointment_date,
+        language,
+        contact_id,
+        call_retry_count,
+        rec_upt_date,
+        call_status 
+    from
+        appointment_remainder.contact_det 
+    where
+        call_status !='ANSWERED' 
+    order by
+        appointment_date asc
